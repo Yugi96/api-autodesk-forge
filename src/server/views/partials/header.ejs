@@ -1,0 +1,28 @@
+<a class="content-logo" href="/">
+    <h1 class="content-logo__title">API FORGE</h1>
+</a>
+<nav class="content-nav">
+    <ul class="content-menu">
+    <% if (isAuthenticated) { %>
+            <li class="content-nav__profile">
+                <div class="content-image-profile">
+                    <img class="content-image-profile__img" src="<%= user.profileImage %>" alt="">
+                </div>
+                <ul class="content-submenu">
+                    <li class="content-submenu__item content-submenu__item--header">
+                        <span class="content-submenu__username"><%= user.username %></span>
+                        <span class="content-submenu__email"><%= user.email %></span>
+                    </li>
+                    <li class="content-submenu__item content-submenu__item--secction">
+                        <a class="content-submenu__link" href="/signout">My Profile</a>
+                    </li>
+                    <li class="content-submenu__item content-submenu__item--footer">
+                        <a class="content-submenu__link" href="/signout">Sign Out</a>
+                    </li>
+                </ul>
+            </li>
+        <% } else { %>
+            <li class="content-menu__item"><a class="content-menu__link" href="/signin">Sign In</a></li>
+        <% } %>
+    </ul>
+</nav>
